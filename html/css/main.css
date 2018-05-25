@@ -1,0 +1,63 @@
+* {
+	font-family: 'Merriweather', serif;
+	font-weight: 400;
+	-webkit-font-smoothing: antialiased;
+}
+*, *:before, *:after {
+	box-sizing: border-box;
+}
+#site-container{
+	max-width: 400px;
+	margin:0 auto;
+	display: grid;
+	grid-template-rows: auto 400px;
+}
+html, body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+input[type="submit"], button{
+	background: #000;
+	padding: 10px;
+	color: #fff;
+	border: none;
+}
+input[type="submit"]:not(:first-child), button:not(:first-child){
+	margin-top: 10px;
+}
+label{
+	margin-top: 10px;
+}
+label, input{
+	display: block;
+}
+input[type="text"],input[type="password"]{
+	padding: 7px;
+}
+aside{
+	overflow: hidden;
+	position: relative;
+	border-top: 2px solid gray;
+	padding-top:20px;
+}
+aside > div{
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	transform: translate(0px, 0px);
+	will-change: transform;
+	transition: transform 1s;
+}
+aside > div.left{
+	transform: translate(-100%, 0px);
+}
+aside > div.right{
+	transform: translate(100%, 0px);
+}
+aside > div.up{
+	transform: translate(0px, -100%);
+}
+aside > div.down{
+	transform: translate(0px, 100%);
+}
