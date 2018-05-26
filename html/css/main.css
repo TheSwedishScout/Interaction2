@@ -7,7 +7,7 @@
 	box-sizing: border-box;
 }
 #site-container{
-	max-width: 400px;
+	max-width: 260px;
 	margin:0 auto;
 	display: grid;
 	grid-template-rows: auto 400px;
@@ -34,6 +34,44 @@ label, input{
 }
 input[type="text"],input[type="password"]{
 	padding: 7px;
+	border-radius: 4px;
+	width: 100%;
+}
+label input{
+	transition: background 0.3s, border 0.3s;
+}
+label.error input{
+	background: rgba(255, 0, 0, 0.3);
+	border: 1px solid #f00;
+}
+label span{
+	display: block;
+	width: 100%;
+	position: relative;
+}
+label span::after{
+	content: "";
+}
+label.error span::after{
+	background-image: url("../img/error-icon.png");
+	width: 20px;
+	height: 20px;
+	background-size: cover;
+	position: absolute;
+	right: 6px;
+    top: 6px;
+}
+p.error-message{
+	max-height: 0;
+	overflow: hidden;
+	will-change: max-height;
+	transition: max-height 0.3s;
+	color: rgb(255, 0, 0);
+	font-size: 13px;
+	margin-top: 3px;
+}
+label.error p.error-message, p.error-message.error{
+	max-height: 25px;
 }
 aside{
 	overflow: hidden;
@@ -47,17 +85,17 @@ aside > div{
 	position: absolute;
 	transform: translate(0px, 0px);
 	will-change: transform;
-	transition: transform 1s;
+	transition: transform .3s;
 }
 aside > div.left{
-	transform: translate(-100%, 0px);
+	transform: translate(-104%, 0px);
 }
 aside > div.right{
-	transform: translate(100%, 0px);
+	transform: translate(104%, 0px);
 }
 aside > div.up{
-	transform: translate(0px, -100%);
+	transform: translate(0px, -104%);
 }
 aside > div.down{
-	transform: translate(0px, 100%);
+	transform: translate(0px, 104%);
 }

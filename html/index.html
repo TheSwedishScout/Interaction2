@@ -22,26 +22,32 @@
 					<button id="loginopen">Log in</button>
 				</div>
 				<div class="right" id="step2">
-					<form>
+					<form novalidate="novalidate">
 						<label>
 							Username
-							<input type="text" name="username">
+							<span><input type="text" name="username" id="username" required="required"></span>
+							<p class="error-message"></p>
 						</label>
 						<label>
 							Password
-							<input type="password" name="password">
+							<span><input type="password" name="password" id="password" required="required"></span>
+							<p class="error-message"></p>
 						</label>
 						<input type="submit" name="submit" value="Login">
+						<p id="LoginError" class="error-message"></p>
 					</form>
 					<p>Forgotten your password? <a href="#" id="forgotpassword">Get it back!</a></p>
 				</div>
 				<div class="down" id="step3">
-					<form>
+					<form novalidate="novalidate">
+						<p>Enter your username below and we'll send an email to the associated address.</p>
 						<label>
 							Username
-							<input type="text" name="username">
+							<span><input type="text" name="username" id="askUsername" required="required"></span>
+							<p class="error-message"></p>
 						</label>
 						<input type="submit" name="getPassword" value="Get password">
+						<p id="ResetPassError" class="error-message"></p>
 					</form>
 				</div>
 				<div class="right" id="step4">
